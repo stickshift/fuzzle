@@ -13,7 +13,9 @@
 		4EC249F61BEC088400704EF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC249F41BEC088400704EF1 /* Main.storyboard */; };
 		4EC249F81BEC088400704EF1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC249F71BEC088400704EF1 /* Images.xcassets */; };
 		4EC249FB1BEC088400704EF1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EC249F91BEC088400704EF1 /* LaunchScreen.xib */; };
-		4EC24A071BEC088400704EF1 /* FuzzleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC24A061BEC088400704EF1 /* FuzzleTests.m */; };
+		4EEF8DE91BEC49F500D03B12 /* LevelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8DE81BEC49F500D03B12 /* LevelModel.m */; };
+		4EEF8DEB1BEC4A8200D03B12 /* LevelModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8DEA1BEC4A8200D03B12 /* LevelModelTests.m */; };
+		4EEF8DEE1BEC50C900D03B12 /* BlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8DED1BEC50C900D03B12 /* BlockView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,11 @@
 		4EC249FA1BEC088400704EF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4EC24A001BEC088400704EF1 /* FuzzleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FuzzleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC24A051BEC088400704EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EC24A061BEC088400704EF1 /* FuzzleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuzzleTests.m; sourceTree = "<group>"; };
+		4EEF8DE71BEC49F500D03B12 /* LevelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelModel.h; sourceTree = "<group>"; };
+		4EEF8DE81BEC49F500D03B12 /* LevelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelModel.m; sourceTree = "<group>"; };
+		4EEF8DEA1BEC4A8200D03B12 /* LevelModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelModelTests.m; sourceTree = "<group>"; };
+		4EEF8DEC1BEC50C900D03B12 /* BlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockView.h; sourceTree = "<group>"; };
+		4EEF8DED1BEC50C900D03B12 /* BlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				4EC249EF1BEC088400704EF1 /* AppDelegate.m */,
 				4EC249F11BEC088400704EF1 /* ViewController.h */,
 				4EC249F21BEC088400704EF1 /* ViewController.m */,
+				4EEF8DEC1BEC50C900D03B12 /* BlockView.h */,
+				4EEF8DED1BEC50C900D03B12 /* BlockView.m */,
+				4EEF8DE71BEC49F500D03B12 /* LevelModel.h */,
+				4EEF8DE81BEC49F500D03B12 /* LevelModel.m */,
 				4EC249F41BEC088400704EF1 /* Main.storyboard */,
 				4EC249F71BEC088400704EF1 /* Images.xcassets */,
 				4EC249F91BEC088400704EF1 /* LaunchScreen.xib */,
@@ -105,7 +115,7 @@
 		4EC24A031BEC088400704EF1 /* FuzzleTests */ = {
 			isa = PBXGroup;
 			children = (
-				4EC24A061BEC088400704EF1 /* FuzzleTests.m */,
+				4EEF8DEA1BEC4A8200D03B12 /* LevelModelTests.m */,
 				4EC24A041BEC088400704EF1 /* Supporting Files */,
 			);
 			path = FuzzleTests;
@@ -168,6 +178,7 @@
 				TargetAttributes = {
 					4EC249E61BEC088400704EF1 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = PU29S8785Z;
 					};
 					4EC249FF1BEC088400704EF1 = {
 						CreatedOnToolsVersion = 6.4;
@@ -219,9 +230,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EEF8DE91BEC49F500D03B12 /* LevelModel.m in Sources */,
 				4EC249F31BEC088400704EF1 /* ViewController.m in Sources */,
 				4EC249F01BEC088400704EF1 /* AppDelegate.m in Sources */,
 				4EC249ED1BEC088400704EF1 /* main.m in Sources */,
+				4EEF8DEE1BEC50C900D03B12 /* BlockView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EC24A071BEC088400704EF1 /* FuzzleTests.m in Sources */,
+				4EEF8DEB1BEC4A8200D03B12 /* LevelModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,9 +362,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Fuzzle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -359,9 +376,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Fuzzle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -418,6 +439,7 @@
 				4EC24A0C1BEC088400704EF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4EC24A0D1BEC088400704EF1 /* Build configuration list for PBXNativeTarget "FuzzleTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +448,7 @@
 				4EC24A0F1BEC088400704EF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

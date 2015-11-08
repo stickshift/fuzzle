@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BlockView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<BlockViewDelegate>
 
+- (IBAction) nextLevel:(id)sender;
 
 @end
 

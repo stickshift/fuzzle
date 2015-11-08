@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuzzleTests/LevelModelTests.m"
+            timestampString = "468706588.012976"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-testIsCorrect"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LevelModelTests testIsCorrect]"
+                  moduleName = "FuzzleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joven/Development/Fuzzle/FuzzleTests/LevelModelTests.m"
+                  timestampString = "468706851.813193"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "5589">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LevelModelTests testIsCorrect]"
+                  moduleName = "FuzzleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joven/Development/Fuzzle/FuzzleTests/LevelModelTests.m"
+                  timestampString = "468706851.813612"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "6907">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LevelModelTests testIsCorrect]"
+                  moduleName = "FuzzleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joven/Development/Fuzzle/FuzzleTests/LevelModelTests.m"
+                  timestampString = "468706851.814153"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "8542">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LevelModelTests testIsCorrect]"
+                  moduleName = "FuzzleTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joven/Development/Fuzzle/FuzzleTests/LevelModelTests.m"
+                  timestampString = "468706851.814912"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "8663">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
