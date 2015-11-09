@@ -178,6 +178,15 @@
         return YES;
     }
     
+    // If block is outside the game board, reject the move
+    if (point.x < 0 ||
+        point.y < 0 ||
+        point.x + BLOCK_SIZE > self.gameBoardView.bounds.size.width ||
+        point.y + BLOCK_SIZE > self.gameBoardView.bounds.size.height)
+    {
+        return NO;
+    }
+    
     // If another block is already there, reject the move
     for (UIView* view in self.gameBoardView.subviews)
     {
