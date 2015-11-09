@@ -123,14 +123,29 @@
         CGFloat pointY = random() % ((int)insetSize.height) + halfSizeOfView;
         
         BlockView* blockView = [[BlockView alloc] initWithFrame: CGRectMake(pointX, pointY, BLOCK_SIZE, BLOCK_SIZE)];
-        [blockView snapToGrid];
         blockView.delegate = self;
+        [blockView snapToGrid];
         [self.gameBoardView addSubview:blockView];
     }
 }
 
-- (void) blockView:(BlockView*)view snappedToGridPosition:(CGPoint)point
+- (BOOL) blockView:(BlockView*)blockView snappedToGridPosition:(CGPoint)point
 {
+    // Bail when initial block is placed
+    if (self.gameBoardView.subviews.count < 2)
+    {
+        return YES;
+    }
+    
+    // If another block is already there, reject the move
+    for (UIView* view in self.gameBoardView.subviews)
+    {
+        if (view != blockView && CGPointEqualToPoint(view.frame.origin, point))
+        {
+            return NO;
+        }
+    }
+    
     NSMutableArray* blocks = [NSMutableArray arrayWithCapacity:self.gameBoardView.subviews.count];
     for (UIView* view in self.gameBoardView.subviews)
     {
@@ -142,6 +157,8 @@
         NSLog(@"%@ - Solution found!!!", TAG);
         [self acceptSolution:blocks];
     }
+    
+    return YES;
 }
 
 - (void) acceptSolution:(NSArray*)blocks

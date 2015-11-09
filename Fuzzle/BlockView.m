@@ -22,6 +22,7 @@
 
 @interface BlockView()
 {
+    CGPoint _startingPoint;
     CGPoint _lastLocation;
     UIColor* _strokeColor;
 }
@@ -59,8 +60,11 @@
     // Promote the touched view
     [self.superview bringSubviewToFront:self];
     
-    // Remember original location
+    // Remember original location of touch
     _lastLocation = [[[event touchesForView:self] anyObject] locationInView:self.superview];
+    
+    // Remember initial location of block
+    _startingPoint = self.frame.origin;
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -90,7 +94,15 @@
     self.center = CGPointMake(xfactor * self.bounds.size.width + self.bounds.size.width / 2 + GRID_INSET,
                               yfactor * self.bounds.size.height + self.bounds.size.height / 2 + GRID_INSET);
     
-    [self.delegate blockView:self snappedToGridPosition:self.frame.origin];
+    if (![self.delegate blockView:self snappedToGridPosition:self.frame.origin])
+    {
+        // Delegate cancelled move, revert to startingPoint
+        [UIView animateWithDuration:0.5 animations:^{
+            CGRect frame = self.frame;
+            frame.origin = _startingPoint;
+            self.frame = frame;
+        }];
+    }
 }
 
 @end

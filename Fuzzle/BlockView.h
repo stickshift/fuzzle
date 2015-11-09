@@ -12,7 +12,7 @@
 
 @protocol BlockViewDelegate <NSObject>
 
-- (void) blockView:(BlockView*)view snappedToGridPosition:(CGPoint)point;
+- (BOOL) blockView:(BlockView*)view snappedToGridPosition:(CGPoint)point;
 
 @end
 
