@@ -119,21 +119,55 @@
     
     // Add blocks
     
+    // Clear old blocks
     [self.gameBoardView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    NSArray* locations = [self generateRandomBlockLocations];
+    
+    for (NSUInteger i = 0; i < _model.blockCount; i++)
+    {
+        BlockView* blockView = [[BlockView alloc] initWithFrame:[locations[i] CGRectValue]];
+        blockView.delegate = self;
+        [blockView snapToGrid];
+        [self.gameBoardView addSubview:blockView];
+    }
+}
+
+- (NSArray*) generateRandomBlockLocations
+{
+    NSMutableArray* locations = [NSMutableArray array];
     
     CGFloat halfSizeOfView = BLOCK_SIZE / 2;
     CGSize insetSize = CGRectInset(self.gameBoardView.bounds, BLOCK_SIZE, BLOCK_SIZE).size;
-    
+
     for (NSUInteger i = 0; i < _model.blockCount; i++)
     {
         CGFloat pointX = random() % ((int)insetSize.width) + halfSizeOfView;
         CGFloat pointY = random() % ((int)insetSize.height) + halfSizeOfView;
         
-        BlockView* blockView = [[BlockView alloc] initWithFrame: CGRectMake(pointX, pointY, BLOCK_SIZE, BLOCK_SIZE)];
-        blockView.delegate = self;
-        [blockView snapToGrid];
-        [self.gameBoardView addSubview:blockView];
+        // Make sure x,y doesn't overlap a previous location
+        BOOL overlaps = NO;
+        for (NSValue* v in locations)
+        {
+            CGRect r = [v CGRectValue];
+            if (fabs(r.origin.x - pointX) < BLOCK_SIZE &&
+                fabs(r.origin.y - pointY) < BLOCK_SIZE)
+            {
+                overlaps = YES;
+                break;
+            }
+        }
+        
+        if (overlaps)
+        {
+            i--;
+            continue;
+        }
+        
+        [locations addObject:[NSValue valueWithCGRect:CGRectMake(pointX, pointY, BLOCK_SIZE, BLOCK_SIZE)]];
     }
+    
+    return locations;
 }
 
 - (BOOL) blockView:(BlockView*)blockView snappedToGridPosition:(CGPoint)point
