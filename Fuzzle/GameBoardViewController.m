@@ -8,12 +8,13 @@
 
 #import "GameBoardViewController.h"
 #import "LevelModel.h"
+#import "CongratulationsViewController.h"
 
 // Constants
 #define TAG @"ViewController"
 #define BLOCK_SIZE 44.0
 #define PADDING_BETWEEN_CONTROLS 8.0
-#define MAX_BLOCK_COUNT 16
+#define MAX_BLOCK_COUNT 5
 
 @interface GameBoardViewController ()
 {
@@ -84,6 +85,12 @@
  */
 - (void) populateGameBoard
 {
+    // Start score timer on first level
+    if (_model.level == 1)
+    {
+        [CongratulationsViewController startScoreTimer];
+    }
+    
     // Setup labels
 
     self.levelLabel.text = [NSString stringWithFormat:@"Level %lu", (unsigned long)_model.level];
@@ -235,14 +242,23 @@
     [_checkmarks[_currentSolutionLabel] setHidden:NO];
     
     _currentSolutionLabel++;
-    
+
     // Check if we're done with level
     if (_currentSolutionLabel == _model.solutionCount)
     {
-        self.messageLabel.text = @"You found them all!";
-        self.messageLabel.hidden = NO;
+        // Check if we're done with game
+        if (_model.blockCount == MAX_BLOCK_COUNT)
+        {
+            [self performSegueWithIdentifier:@"congratulations" sender:self];
+        }
         
-        self.nextLevelButton.hidden = NO;
+        else
+        {
+            self.messageLabel.text = @"You found them all!";
+            self.messageLabel.hidden = NO;
+            
+            self.nextLevelButton.hidden = NO;
+        }
     }
 }
 

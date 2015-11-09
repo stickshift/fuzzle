@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E8104151BF040BB007C9F1C /* CongratulationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8104141BF040BB007C9F1C /* CongratulationsViewController.m */; };
+		4E8104181BF056DF007C9F1C /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8104171BF056DF007C9F1C /* HighScoresViewController.m */; };
 		4EC249ED1BEC088400704EF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC249EC1BEC088400704EF1 /* main.m */; };
 		4EC249F01BEC088400704EF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC249EF1BEC088400704EF1 /* AppDelegate.m */; };
 		4EC249F31BEC088400704EF1 /* GameBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC249F21BEC088400704EF1 /* GameBoardViewController.m */; };
@@ -29,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E8104131BF040BB007C9F1C /* CongratulationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CongratulationsViewController.h; sourceTree = "<group>"; };
+		4E8104141BF040BB007C9F1C /* CongratulationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongratulationsViewController.m; sourceTree = "<group>"; };
+		4E8104161BF056DF007C9F1C /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresViewController.h; sourceTree = "<group>"; };
+		4E8104171BF056DF007C9F1C /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresViewController.m; sourceTree = "<group>"; };
 		4EC249E71BEC088400704EF1 /* Fuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC249EB1BEC088400704EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC249EC1BEC088400704EF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,6 +97,10 @@
 				4EC249EF1BEC088400704EF1 /* AppDelegate.m */,
 				4EC249F11BEC088400704EF1 /* GameBoardViewController.h */,
 				4EC249F21BEC088400704EF1 /* GameBoardViewController.m */,
+				4E8104161BF056DF007C9F1C /* HighScoresViewController.h */,
+				4E8104171BF056DF007C9F1C /* HighScoresViewController.m */,
+				4E8104131BF040BB007C9F1C /* CongratulationsViewController.h */,
+				4E8104141BF040BB007C9F1C /* CongratulationsViewController.m */,
 				4EEF8DEC1BEC50C900D03B12 /* BlockView.h */,
 				4EEF8DED1BEC50C900D03B12 /* BlockView.m */,
 				4EEF8DE71BEC49F500D03B12 /* LevelModel.h */,
@@ -233,7 +243,9 @@
 				4EEF8DE91BEC49F500D03B12 /* LevelModel.m in Sources */,
 				4EC249F31BEC088400704EF1 /* GameBoardViewController.m in Sources */,
 				4EC249F01BEC088400704EF1 /* AppDelegate.m in Sources */,
+				4E8104181BF056DF007C9F1C /* HighScoresViewController.m in Sources */,
 				4EC249ED1BEC088400704EF1 /* main.m in Sources */,
+				4E8104151BF040BB007C9F1C /* CongratulationsViewController.m in Sources */,
 				4EEF8DEE1BEC50C900D03B12 /* BlockView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
