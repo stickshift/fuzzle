@@ -11,5 +11,6 @@
 @interface CongratulationsViewController : UIViewController
 
 + (void) startScoreTimer;
++ (long) currentTime;
 
 @end

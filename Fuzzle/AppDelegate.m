@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 AndrewSomesYoung. All rights reserved.
 //
 
+#import "Flurry.h"
 #import "AppDelegate.h"
 
 @interface AppDelegate()
@@ -18,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Flurry startSession:@"2PDNNDY8V2D6YPM7M47Q"];
     return YES;
 }
 

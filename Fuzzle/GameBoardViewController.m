@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 AndrewSomesYoung. All rights reserved.
 //
 
+#import "Flurry.h"
 #import "GameBoardViewController.h"
 #import "LevelModel.h"
 #import "CongratulationsViewController.h"
@@ -108,7 +109,7 @@
     // Setup solutions
     for (NSUInteger i = 0;i < _model.solutionCount;i++)
     {
-        [_solutionLabels[i] setText:[NSString stringWithFormat:@"%u) ", i+1]];
+        [_solutionLabels[i] setText:[NSString stringWithFormat:@"%u) ", (unsigned int)i+1]];
         [_solutionLabels[i] setHidden:NO];
     }
     
@@ -235,10 +236,14 @@
     
     [_solutions addObject:description];
     
+    // Log event in Flurry
+    [Flurry logEvent:@"LEVEL_SOLVED" withParameters:@{ @"LEVEL" : @(_model.level),
+                                                       @"TIME" : @([CongratulationsViewController currentTime])}];
+    
     // Add solution to list
     [_solutionLabels[_currentSolutionLabel] setText:[NSString stringWithFormat:@"%u) %@",
-                                                                               _currentSolutionLabel+1,
-                                                                              description]];
+                                                                               (unsigned int)_currentSolutionLabel+1,
+                                                                               description]];
     [_checkmarks[_currentSolutionLabel] setHidden:NO];
     
     _currentSolutionLabel++;

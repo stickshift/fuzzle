@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E322BDC1BF0B1C40000DA18 /* libFlurry_7.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E322BDB1BF0B1C40000DA18 /* libFlurry_7.3.0.a */; };
+		4E322BDE1BF0B1DE0000DA18 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E322BDD1BF0B1DE0000DA18 /* Security.framework */; };
+		4E322BE01BF0B1EB0000DA18 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E322BDF1BF0B1EB0000DA18 /* SystemConfiguration.framework */; };
 		4E8104151BF040BB007C9F1C /* CongratulationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8104141BF040BB007C9F1C /* CongratulationsViewController.m */; };
 		4E8104181BF056DF007C9F1C /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8104171BF056DF007C9F1C /* HighScoresViewController.m */; };
 		4EC249ED1BEC088400704EF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC249EC1BEC088400704EF1 /* main.m */; };
@@ -31,6 +34,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E322BD91BF0B1C40000DA18 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		4E322BDA1BF0B1C40000DA18 /* FlurryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryWatch.h; sourceTree = "<group>"; };
+		4E322BDB1BF0B1C40000DA18 /* libFlurry_7.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_7.3.0.a; sourceTree = "<group>"; };
+		4E322BDD1BF0B1DE0000DA18 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4E322BDF1BF0B1EB0000DA18 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4E8104131BF040BB007C9F1C /* CongratulationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CongratulationsViewController.h; sourceTree = "<group>"; };
 		4E8104141BF040BB007C9F1C /* CongratulationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CongratulationsViewController.m; sourceTree = "<group>"; };
 		4E8104161BF056DF007C9F1C /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresViewController.h; sourceTree = "<group>"; };
@@ -59,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E322BE01BF0B1EB0000DA18 /* SystemConfiguration.framework in Frameworks */,
+				4E322BDE1BF0B1DE0000DA18 /* Security.framework in Frameworks */,
+				4E322BDC1BF0B1C40000DA18 /* libFlurry_7.3.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,9 +83,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E322BD81BF0B1C40000DA18 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				4E322BD91BF0B1C40000DA18 /* Flurry.h */,
+				4E322BDA1BF0B1C40000DA18 /* FlurryWatch.h */,
+				4E322BDB1BF0B1C40000DA18 /* libFlurry_7.3.0.a */,
+			);
+			path = Flurry;
+			sourceTree = "<group>";
+		};
 		4EC249DE1BEC088400704EF1 = {
 			isa = PBXGroup;
 			children = (
+				4E322BDF1BF0B1EB0000DA18 /* SystemConfiguration.framework */,
+				4E322BDD1BF0B1DE0000DA18 /* Security.framework */,
+				4E322BD81BF0B1C40000DA18 /* Flurry */,
 				4EC249E91BEC088400704EF1 /* Fuzzle */,
 				4EC24A031BEC088400704EF1 /* FuzzleTests */,
 				4EC249E81BEC088400704EF1 /* Products */,
@@ -379,6 +403,10 @@
 				INFOPLIST_FILE = Fuzzle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Flurry",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -393,6 +421,10 @@
 				INFOPLIST_FILE = Fuzzle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Flurry",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

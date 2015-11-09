@@ -81,6 +81,11 @@ static long startTime;
     startTime = time(NULL);
 }
 
++ (long) currentTime
+{
+    return time(NULL) - startTime;
+}
+
 - (IBAction) saveHighScore:(id)sender
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];

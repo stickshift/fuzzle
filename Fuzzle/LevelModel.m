@@ -66,7 +66,7 @@
             return 5; // 16x1,8x2,4x4,2x8,1x16
         default:
             @throw [NSException exceptionWithName:NSInvalidArgumentException
-                                           reason:[NSString stringWithFormat:@"Unexpected blockCount %u", _blockCount]
+                                           reason:[NSString stringWithFormat:@"Unexpected blockCount %lu", (unsigned long)_blockCount]
                                          userInfo:nil];
     }
     return 0;
@@ -196,7 +196,7 @@
     NSUInteger width = bounds.size.width / [blocks[0] CGRectValue].size.width;
     NSUInteger height = bounds.size.height / [blocks[0] CGRectValue].size.height;
     
-    return [NSString stringWithFormat:@"%ux%u", width, height];
+    return [NSString stringWithFormat:@"%lux%lu", (unsigned long)width, (unsigned long)height];
 }
 
 @end
