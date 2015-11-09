@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 AndrewSomesYoung. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GameBoardViewController.h"
 #import "LevelModel.h"
 
 // Constants
@@ -15,11 +15,12 @@
 #define PADDING_BETWEEN_CONTROLS 8.0
 #define MAX_BLOCK_COUNT 16
 
-@interface ViewController ()
+@interface GameBoardViewController ()
 {
     LevelModel* _model;
-    NSUInteger _currentSolution;
-    NSArray* _solutions;
+    NSUInteger _currentSolutionLabel;
+    NSArray* _solutionLabels;
+    NSMutableArray* _solutions;
     NSArray* _checkmarks;
 }
 
@@ -38,23 +39,25 @@
 @property (nonatomic, weak) IBOutlet UIImageView* solution5Checkmark;
 @property (nonatomic, weak) IBOutlet UILabel* solution6Label;
 @property (nonatomic, weak) IBOutlet UIImageView* solution6Checkmark;
-@property (nonatomic, weak) IBOutlet UILabel* youFoundThemLabel;
+@property (nonatomic, weak) IBOutlet UILabel* messageLabel;
 @property (nonatomic, weak) IBOutlet UIButton* nextLevelButton;
+
+- (IBAction) nextLevel:(id)sender;
 
 @end
 
-@implementation ViewController
+@implementation GameBoardViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    _solutions = @[_solution1Label,
-                   _solution2Label,
-                   _solution3Label,
-                   _solution4Label,
-                   _solution5Label,
-                   _solution6Label];
+    _solutionLabels = @[_solution1Label,
+                        _solution2Label,
+                        _solution3Label,
+                        _solution4Label,
+                        _solution5Label,
+                        _solution6Label];
     _checkmarks = @[_solution1Checkmark,
                     _solution2Checkmark,
                     _solution3Checkmark,
@@ -76,6 +79,9 @@
     }
 }
 
+/**
+ * Resets game according to _model
+ */
 - (void) populateGameBoard
 {
     // Setup labels
@@ -83,19 +89,20 @@
     self.levelLabel.text = [NSString stringWithFormat:@"Level %lu", (unsigned long)_model.level];
     self.levelDescriptionLabel.text = [NSString stringWithFormat:@"Create %lu rectangles with %lu blocks", (unsigned long)_model.solutionCount, (unsigned long)_model.blockCount];
 
-    _currentSolution = 0;
-
+    _currentSolutionLabel = 0;
+    _solutions = [NSMutableArray array];
+    
     // Hide all solutions
-    for (UIView* solution in _solutions)
+    for (UIView* label in _solutionLabels)
     {
-        solution.hidden = YES;
+        label.hidden = YES;
     }
     
     // Setup solutions
     for (NSUInteger i = 0;i < _model.solutionCount;i++)
     {
-        [_solutions[i] setText:[NSString stringWithFormat:@"%u) ", i+1]];
-        [_solutions[i] setHidden:NO];
+        [_solutionLabels[i] setText:[NSString stringWithFormat:@"%u) ", i+1]];
+        [_solutionLabels[i] setHidden:NO];
     }
     
     // Hide all checkmarks
@@ -104,8 +111,8 @@
         checkmark.hidden = YES;
     }
 
-    // Hide youFoundThem
-    self.youFoundThemLabel.hidden = YES;
+    // Hide messageLabel
+    self.messageLabel.hidden = YES;
     
     // Hide next level
     self.nextLevelButton.hidden = YES;
@@ -163,16 +170,40 @@
 
 - (void) acceptSolution:(NSArray*)blocks
 {
-    [_solutions[_currentSolution] setText:[NSString stringWithFormat:@"%u) %@", _currentSolution+1, [_model describeSolution:blocks]]];
-    [_checkmarks[_currentSolution] setHidden:NO];
+    NSString* description = [_model describeSolution:blocks];
     
-    _currentSolution++;
-    
-    if (_currentSolution == _model.solutionCount)
+    // Check if solution was already found
+    if ([_solutions containsObject:description])
     {
-        self.youFoundThemLabel.hidden = NO;
+        self.messageLabel.text = @"Try another shape.";
+        self.messageLabel.hidden = NO;
+        
+        [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(hideMessageLater:) userInfo:nil repeats:NO];
+        
+        return;
+    }
+    
+    [_solutions addObject:description];
+    
+    [_solutionLabels[_currentSolutionLabel] setText:[NSString stringWithFormat:@"%u) %@",
+                                                                               _currentSolutionLabel+1,
+                                                                              description]];
+    [_checkmarks[_currentSolutionLabel] setHidden:NO];
+    
+    _currentSolutionLabel++;
+    
+    if (_currentSolutionLabel == _model.solutionCount)
+    {
+        self.messageLabel.text = @"You found them all!";
+        self.messageLabel.hidden = NO;
+        
         self.nextLevelButton.hidden = NO;
     }
+}
+
+- (void) hideMessageLater:(NSTimer*)timer
+{
+    self.messageLabel.hidden = YES;
 }
 
 @end

@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BlockView.h"
 
-@interface ViewController : UIViewController<BlockViewDelegate>
-
-- (IBAction) nextLevel:(id)sender;
-
-@end
+/**
+ * Manages the game board
+ */
+@interface GameBoardViewController : UIViewController<BlockViewDelegate> @end
 

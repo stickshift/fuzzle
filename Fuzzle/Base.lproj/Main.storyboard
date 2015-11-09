@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Board View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameBoardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -112,6 +113,7 @@
                         <outlet property="gameBoardView" destination="oNN-Gw-rg1" id="lhe-qS-isa"/>
                         <outlet property="levelDescriptionLabel" destination="Mt1-VP-Lkv" id="atL-lP-oL2"/>
                         <outlet property="levelLabel" destination="dTf-Ew-1LE" id="Xc6-fj-MSP"/>
+                        <outlet property="messageLabel" destination="wh7-Io-ih9" id="pwl-dI-tKD"/>
                         <outlet property="nextLevelButton" destination="Cec-ao-trc" id="B7i-1J-Bau"/>
                         <outlet property="solution1Checkmark" destination="yIr-6s-AfY" id="z3F-Bb-Qit"/>
                         <outlet property="solution1Label" destination="dRK-3s-gMj" id="Qt0-AT-73C"/>
@@ -125,7 +127,6 @@
                         <outlet property="solution5Label" destination="HG2-Qi-fI5" id="TSx-mQ-tB8"/>
                         <outlet property="solution6Checkmark" destination="hp7-ev-oCO" id="g3I-Jc-vpa"/>
                         <outlet property="solution6Label" destination="bgW-ac-yey" id="hwo-K2-k6O"/>
-                        <outlet property="youFoundThemLabel" destination="wh7-Io-ih9" id="8mc-va-RUQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
