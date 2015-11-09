@@ -126,10 +126,12 @@
     CGRect bounds = [self computeBounds:blocks];
     
     // Verify bounds area matches number of blocks
-    if (bounds.size.width / 44 * bounds.size.height / 44 != blocks.count)
+    if (bounds.size.width / 44 * bounds.size.height / 44 != self.blockCount)
     {
         return NO;
     }
+    
+    // TODO: I think the rest of these heuristics are obsolete given the area based check above
     
     // Verify all blocks are within bounds
     for (NSValue* v in blocks)

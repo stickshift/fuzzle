@@ -65,7 +65,7 @@
         long minutes = duration / 60;
         long seconds = duration % 60;
         
-        [_timeLabels[i] setText:[NSString stringWithFormat:@"%ldm %lds", minutes, seconds]];
+        [_timeLabels[i] setText:[NSString stringWithFormat:@"%02ld:%02ld", minutes, seconds]];
 
         NSString* name = [highscores[i] objectForKey:@"name"];
         [_nameLabels[i] setText:name];
