@@ -14,7 +14,7 @@
 #define TAG @"ViewController"
 #define BLOCK_SIZE 44.0
 #define PADDING_BETWEEN_CONTROLS 8.0
-#define MAX_BLOCK_COUNT 5
+#define MAX_BLOCK_COUNT 16
 
 @interface GameBoardViewController ()
 {
