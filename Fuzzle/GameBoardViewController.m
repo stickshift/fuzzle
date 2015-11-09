@@ -185,6 +185,7 @@
     
     [_solutions addObject:description];
     
+    // Add solution to list
     [_solutionLabels[_currentSolutionLabel] setText:[NSString stringWithFormat:@"%u) %@",
                                                                                _currentSolutionLabel+1,
                                                                               description]];
@@ -192,6 +193,7 @@
     
     _currentSolutionLabel++;
     
+    // Check if we're done with level
     if (_currentSolutionLabel == _model.solutionCount)
     {
         self.messageLabel.text = @"You found them all!";
